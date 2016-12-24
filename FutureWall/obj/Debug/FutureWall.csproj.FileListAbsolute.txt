@@ -1,0 +1,15 @@
+d:\users\ss\documents\visual studio 2013\FutureWall\FutureWall\bin\Debug\FutureWall.exe.config
+D:\Users\ss\Documents\Visual Studio 2013\FutureWall\FutureWall\bin\Debug\FutureWall.exe
+D:\Users\ss\Documents\Visual Studio 2013\FutureWall\FutureWall\bin\Debug\FutureWall.pdb
+D:\Users\ss\Documents\Visual Studio 2013\FutureWall\FutureWall\obj\Debug\MainWindow.baml
+D:\Users\ss\Documents\Visual Studio 2013\FutureWall\FutureWall\obj\Debug\MainWindow.g.cs
+D:\Users\ss\Documents\Visual Studio 2013\FutureWall\FutureWall\obj\Debug\App.g.cs
+D:\Users\ss\Documents\Visual Studio 2013\FutureWall\FutureWall\obj\Debug\FutureWall_MarkupCompile.cache
+D:\Users\ss\Documents\Visual Studio 2013\FutureWall\FutureWall\obj\Debug\FutureWall.g.resources
+D:\Users\ss\Documents\Visual Studio 2013\FutureWall\FutureWall\obj\Debug\FutureWall.Properties.Resources.resources
+D:\Users\ss\Documents\Visual Studio 2013\FutureWall\FutureWall\obj\Debug\FutureWall.csproj.GenerateResource.Cache
+D:\Users\ss\Documents\Visual Studio 2013\FutureWall\FutureWall\obj\Debug\FutureWall.exe
+D:\Users\ss\Documents\Visual Studio 2013\FutureWall\FutureWall\obj\Debug\FutureWall.pdb
+D:\Users\ss\Documents\Visual Studio 2013\FutureWall\FutureWall\obj\Debug\Dictionary1.baml
+D:\Users\ss\Documents\Visual Studio 2013\FutureWall\FutureWall\obj\Debug\FutureWall_MarkupCompile.lref
+D:\Users\ss\Documents\Visual Studio 2013\FutureWall\FutureWall\obj\Debug\FutureWall.csprojResolveAssemblyReference.cache
