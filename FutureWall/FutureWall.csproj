@@ -34,16 +34,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FSharp.Core, Version=4.3.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Temp\MathNet.Numerics\Net40\FSharp.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="MathNet.Numerics">
-      <HintPath>..\..\..\Temp\MathNet.Numerics\Net40\MathNet.Numerics.dll</HintPath>
-    </Reference>
-    <Reference Include="MathNet.Numerics.FSharp">
-      <HintPath>..\..\..\Temp\MathNet.Numerics\Net40\MathNet.Numerics.FSharp.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -63,11 +53,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="CanvasPanel\Circle.xaml.cs">
-      <DependentUpon>Circle.xaml</DependentUpon>
+    <Compile Include="VisualDemo.xaml.cs">
+      <DependentUpon>VisualDemo.xaml</DependentUpon>
     </Compile>
     <Compile Include="Util.cs" />
-    <Page Include="CanvasPanel\Circle.xaml">
+    <Page Include="VisualDemo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
