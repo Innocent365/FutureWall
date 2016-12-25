@@ -1,7 +1,6 @@
 ﻿<Window x:Class="FutureWall.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:futureWall="clr-namespace:FutureWall"
         Title="MainWindow"
         Width="900"
         Height="628" />

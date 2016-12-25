@@ -13,3 +13,11 @@ D:\Users\ss\Documents\Visual Studio 2013\FutureWall\FutureWall\obj\Debug\FutureW
 D:\Users\ss\Documents\Visual Studio 2013\FutureWall\FutureWall\obj\Debug\Dictionary1.baml
 D:\Users\ss\Documents\Visual Studio 2013\FutureWall\FutureWall\obj\Debug\FutureWall_MarkupCompile.lref
 D:\Users\ss\Documents\Visual Studio 2013\FutureWall\FutureWall\obj\Debug\FutureWall.csprojResolveAssemblyReference.cache
+D:\Users\ss\Documents\Visual Studio 2013\FutureWall\FutureWall\obj\Debug\CanvasPanel\Circle.baml
+D:\Users\ss\Documents\Visual Studio 2013\FutureWall\FutureWall\obj\Debug\CanvasPanel\Circle.g.cs
+D:\Users\ss\Documents\Visual Studio 2013\FutureWall\FutureWall\bin\Debug\MathNet.Numerics.dll
+D:\Users\ss\Documents\Visual Studio 2013\FutureWall\FutureWall\bin\Debug\MathNet.Numerics.FSharp.dll
+D:\Users\ss\Documents\Visual Studio 2013\FutureWall\FutureWall\bin\Debug\MathNet.Numerics.pdb
+D:\Users\ss\Documents\Visual Studio 2013\FutureWall\FutureWall\bin\Debug\MathNet.Numerics.xml
+D:\Users\ss\Documents\Visual Studio 2013\FutureWall\FutureWall\bin\Debug\MathNet.Numerics.FSharp.pdb
+D:\Users\ss\Documents\Visual Studio 2013\FutureWall\FutureWall\bin\Debug\MathNet.Numerics.FSharp.xml

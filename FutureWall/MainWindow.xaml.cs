@@ -33,7 +33,7 @@ namespace FutureWall
 
         private void OnLoad(object sender, RoutedEventArgs e)
         {
-            var example = new AnimationUsingPathExample();
+            var example = new AnimationPage();
             example.Width = 800;
             example.Height = 600;
             example.Background = new SolidColorBrush(Colors.Chocolate);

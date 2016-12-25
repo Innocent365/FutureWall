@@ -34,6 +34,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FSharp.Core, Version=4.3.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Temp\MathNet.Numerics\Net40\FSharp.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MathNet.Numerics">
+      <HintPath>..\..\..\Temp\MathNet.Numerics\Net40\MathNet.Numerics.dll</HintPath>
+    </Reference>
+    <Reference Include="MathNet.Numerics.FSharp">
+      <HintPath>..\..\..\Temp\MathNet.Numerics\Net40\MathNet.Numerics.FSharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -53,6 +63,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CanvasPanel\Circle.xaml.cs">
+      <DependentUpon>Circle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Util.cs" />
+    <Page Include="CanvasPanel\Circle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Dictionary1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -61,11 +79,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="AnimationUsingPathExample.cs" />
+    <Compile Include="AnimationPage.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ImageCell.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -98,7 +117,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Resource Include="Resources\0.jpeg" />
     <Resource Include="Resources\1.jpeg" />
@@ -150,6 +168,159 @@
     <Resource Include="Resources\7.jpeg" />
     <Resource Include="Resources\8.jpeg" />
     <Resource Include="Resources\9.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\100.jpeg" />
+    <Resource Include="Resources\101.jpeg" />
+    <Resource Include="Resources\102.jpeg" />
+    <Resource Include="Resources\103.jpeg" />
+    <Resource Include="Resources\104.jpeg" />
+    <Resource Include="Resources\105.jpeg" />
+    <Resource Include="Resources\106.jpeg" />
+    <Resource Include="Resources\107.jpeg" />
+    <Resource Include="Resources\108.jpeg" />
+    <Resource Include="Resources\109.jpeg" />
+    <Resource Include="Resources\110.jpeg" />
+    <Resource Include="Resources\111.jpeg" />
+    <Resource Include="Resources\112.jpeg" />
+    <Resource Include="Resources\113.jpeg" />
+    <Resource Include="Resources\114.jpeg" />
+    <Resource Include="Resources\115.jpeg" />
+    <Resource Include="Resources\116.jpeg" />
+    <Resource Include="Resources\117.jpeg" />
+    <Resource Include="Resources\118.jpeg" />
+    <Resource Include="Resources\119.jpeg" />
+    <Resource Include="Resources\120.jpeg" />
+    <Resource Include="Resources\121.jpeg" />
+    <Resource Include="Resources\122.jpeg" />
+    <Resource Include="Resources\123.jpeg" />
+    <Resource Include="Resources\124.jpeg" />
+    <Resource Include="Resources\125.jpeg" />
+    <Resource Include="Resources\126.jpeg" />
+    <Resource Include="Resources\127.jpeg" />
+    <Resource Include="Resources\128.jpeg" />
+    <Resource Include="Resources\129.jpeg" />
+    <Resource Include="Resources\130.jpeg" />
+    <Resource Include="Resources\131.jpeg" />
+    <Resource Include="Resources\132.jpeg" />
+    <Resource Include="Resources\133.jpeg" />
+    <Resource Include="Resources\134.jpeg" />
+    <Resource Include="Resources\135.jpeg" />
+    <Resource Include="Resources\136.jpeg" />
+    <Resource Include="Resources\137.jpeg" />
+    <Resource Include="Resources\138.jpeg" />
+    <Resource Include="Resources\139.jpeg" />
+    <Resource Include="Resources\140.jpeg" />
+    <Resource Include="Resources\141.jpeg" />
+    <Resource Include="Resources\142.jpeg" />
+    <Resource Include="Resources\143.jpeg" />
+    <Resource Include="Resources\144.jpeg" />
+    <Resource Include="Resources\145.jpeg" />
+    <Resource Include="Resources\146.jpeg" />
+    <Resource Include="Resources\147.jpeg" />
+    <Resource Include="Resources\148.jpeg" />
+    <Resource Include="Resources\149.jpeg" />
+    <Resource Include="Resources\150.jpeg" />
+    <Resource Include="Resources\151.jpeg" />
+    <Resource Include="Resources\152.jpeg" />
+    <Resource Include="Resources\153.jpeg" />
+    <Resource Include="Resources\154.jpeg" />
+    <Resource Include="Resources\155.jpeg" />
+    <Resource Include="Resources\156.jpeg" />
+    <Resource Include="Resources\157.jpeg" />
+    <Resource Include="Resources\158.jpeg" />
+    <Resource Include="Resources\159.jpeg" />
+    <Resource Include="Resources\160.jpeg" />
+    <Resource Include="Resources\161.jpeg" />
+    <Resource Include="Resources\162.jpeg" />
+    <Resource Include="Resources\163.jpeg" />
+    <Resource Include="Resources\164.jpeg" />
+    <Resource Include="Resources\165.jpeg" />
+    <Resource Include="Resources\166.jpeg" />
+    <Resource Include="Resources\167.jpeg" />
+    <Resource Include="Resources\168.jpeg" />
+    <Resource Include="Resources\169.jpeg" />
+    <Resource Include="Resources\170.jpeg" />
+    <Resource Include="Resources\171.jpeg" />
+    <Resource Include="Resources\172.jpeg" />
+    <Resource Include="Resources\173.jpeg" />
+    <Resource Include="Resources\174.jpeg" />
+    <Resource Include="Resources\175.jpeg" />
+    <Resource Include="Resources\176.jpeg" />
+    <Resource Include="Resources\177.jpeg" />
+    <Resource Include="Resources\178.jpeg" />
+    <Resource Include="Resources\179.jpeg" />
+    <Resource Include="Resources\180.jpeg" />
+    <Resource Include="Resources\181.jpeg" />
+    <Resource Include="Resources\182.jpeg" />
+    <Resource Include="Resources\183.jpeg" />
+    <Resource Include="Resources\184.jpeg" />
+    <Resource Include="Resources\185.jpeg" />
+    <Resource Include="Resources\186.jpeg" />
+    <Resource Include="Resources\187.jpeg" />
+    <Resource Include="Resources\188.jpeg" />
+    <Resource Include="Resources\189.jpeg" />
+    <Resource Include="Resources\190.jpeg" />
+    <Resource Include="Resources\191.jpeg" />
+    <Resource Include="Resources\192.jpeg" />
+    <Resource Include="Resources\193.jpeg" />
+    <Resource Include="Resources\194.jpeg" />
+    <Resource Include="Resources\195.jpeg" />
+    <Resource Include="Resources\196.jpeg" />
+    <Resource Include="Resources\197.jpeg" />
+    <Resource Include="Resources\198.jpeg" />
+    <Resource Include="Resources\199.jpeg" />
+    <Resource Include="Resources\200.jpeg" />
+    <Resource Include="Resources\50.jpeg" />
+    <Resource Include="Resources\51.jpeg" />
+    <Resource Include="Resources\52.jpeg" />
+    <Resource Include="Resources\53.jpeg" />
+    <Resource Include="Resources\54.jpeg" />
+    <Resource Include="Resources\55.jpeg" />
+    <Resource Include="Resources\56.jpeg" />
+    <Resource Include="Resources\57.jpeg" />
+    <Resource Include="Resources\58.jpeg" />
+    <Resource Include="Resources\59.jpeg" />
+    <Resource Include="Resources\60.jpeg" />
+    <Resource Include="Resources\61.jpeg" />
+    <Resource Include="Resources\62.jpeg" />
+    <Resource Include="Resources\63.jpeg" />
+    <Resource Include="Resources\64.jpeg" />
+    <Resource Include="Resources\65.jpeg" />
+    <Resource Include="Resources\66.jpeg" />
+    <Resource Include="Resources\67.jpeg" />
+    <Resource Include="Resources\68.jpeg" />
+    <Resource Include="Resources\69.jpeg" />
+    <Resource Include="Resources\70.jpeg" />
+    <Resource Include="Resources\71.jpeg" />
+    <Resource Include="Resources\72.jpeg" />
+    <Resource Include="Resources\73.jpeg" />
+    <Resource Include="Resources\74.jpeg" />
+    <Resource Include="Resources\75.jpeg" />
+    <Resource Include="Resources\76.jpeg" />
+    <Resource Include="Resources\77.jpeg" />
+    <Resource Include="Resources\78.jpeg" />
+    <Resource Include="Resources\79.jpeg" />
+    <Resource Include="Resources\80.jpeg" />
+    <Resource Include="Resources\81.jpeg" />
+    <Resource Include="Resources\82.jpeg" />
+    <Resource Include="Resources\83.jpeg" />
+    <Resource Include="Resources\84.jpeg" />
+    <Resource Include="Resources\85.jpeg" />
+    <Resource Include="Resources\86.jpeg" />
+    <Resource Include="Resources\87.jpeg" />
+    <Resource Include="Resources\88.jpeg" />
+    <Resource Include="Resources\89.jpeg" />
+    <Resource Include="Resources\90.jpeg" />
+    <Resource Include="Resources\91.jpeg" />
+    <Resource Include="Resources\92.jpeg" />
+    <Resource Include="Resources\93.jpeg" />
+    <Resource Include="Resources\94.jpeg" />
+    <Resource Include="Resources\95.jpeg" />
+    <Resource Include="Resources\96.jpeg" />
+    <Resource Include="Resources\97.jpeg" />
+    <Resource Include="Resources\98.jpeg" />
+    <Resource Include="Resources\99.jpeg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
