@@ -1,0 +1,25 @@
+﻿<Page x:Class="FutureWall.VisualDemo"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      Title="Circle"
+      d:DesignHeight="665"
+      d:DesignWidth="820"
+      mc:Ignorable="d">
+
+    <Canvas Background="DarkGray">
+        <Path x:Name="LeafPathSmall"
+              Data="M 80,80 C 170,320 220,360 380,320 C 310,80 190,60 80,80"
+              Fill="Blue"
+              Stretch="None"
+              StrokeThickness="1"
+              Visibility="Hidden" />
+        <Path x:Name="LeafPathBig"
+              Data="M 180,180 C 300,620 350,650 600,620 C 410,100 210,160 180,180"
+              Fill="GreenYellow"
+              Stretch="None"
+              StrokeThickness="1" />
+    </Canvas>
+</Page>
+
