@@ -43,9 +43,8 @@ namespace FutureWall
             pFigure.StartPoint = new Point(startP.X, startP.Y);
 
             PolyLineSegment pBezierSegment = new PolyLineSegment();
-            //pBezierSegment.Points.Add(new Point((startP.X + endP.X) / 2, (startP.Y + endP.Y) / 2));
+            
             pBezierSegment.Points.Add(new Point(endP.X - 10, endP.Y + 5));
-
             pBezierSegment.Points.Add(new Point(endP.X, endP.Y));
 
             pFigure.Segments.Add(pBezierSegment);
@@ -66,24 +65,21 @@ namespace FutureWall
             Func<double, double, bool> Circle2 = (x, y) => { return false; };
         }
 
-        public static Point[] FigureContour(Size panelSize, Size singleSize, Panel mainPanel)
+        public static Point[] FigureContour(Size panelSize, Size singleSize)
         {
             var aimPoints = new List<Point>();
             
             var pathGeo = GetPathGeometry();
 
-            var elm = new System.Windows.Shapes.Path();
-            elm.Data = pathGeo;
-            //elm.Stroke = new ImageBrush
-            //{
+            //var elm = new System.Windows.Shapes.Path();
+            //elm.Data = pathGeo;
+            //elm.Stroke = new ImageBrush{
             //    ImageSource = new BitmapImage(
             //            new Uri("pack://application:,,,/Resources/mask.png", UriKind.RelativeOrAbsolute))
             //};
-            elm.StrokeThickness = 7;
-            elm.Stroke = new LinearGradientBrush(
-                Colors.White, Colors.DarkGray,90);
+            //elm.StrokeThickness = 100;
 
-            mainPanel.Children.Add(elm);
+            //mainPanel.Children.Add(elm);
 
             for (var i = 0d; i < panelSize.Width; i += singleSize.Width)
             {
@@ -101,7 +97,11 @@ namespace FutureWall
         private static PathGeometry GetPathGeometry()
         {
             var pathGeo = new PathGeometry();
-            pathGeo.Figures = PathFigureCollection.Parse("M 80,80 C 170,320 220,360 380,320 C 310,80 190,60 80,80");
+            pathGeo.Figures = PathFigureCollection.Parse(
+                "M 180,90 L 280,250 L 280,500 L 320,500 L 320,250 L 410,90 L 390,90 L 280,240 L 200,90");
+                //"M 180,90 L 280,250 L 280,500 L 320,500 L 320,250 L 410,90");
+                //"M 180,90 C 300,530 350,560 600,530 C 410,20 210,70 180,90");
+                //"M 80,80 C 170,320 220,360 380,320 C 310,80 190,60 80,80");
             
             return pathGeo;
         }

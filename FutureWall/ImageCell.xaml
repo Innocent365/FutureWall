@@ -8,10 +8,11 @@
       d:DesignHeight="88"
       d:DesignWidth="88"
       mc:Ignorable="d">
-    <Canvas Background="#a0bddc" Visibility="Collapsed">
-        <Canvas.OpacityMask>
-            <ImageBrush ImageSource="Resources/mask.png" />
-        </Canvas.OpacityMask>
-    </Canvas>
-    <Image Margin="30" Source="{Binding Source, ElementName=This}" />
+    <!--    <Canvas Background="#a0bddc">-->
+    <!--        <Canvas.OpacityMask>-->
+    <!--            <ImageBrush ImageSource="Resources/mask.png" />-->
+    <!--        </Canvas.OpacityMask>-->
+    <!--    </Canvas>-->
+    <Image Source="{Binding Source, ElementName=This}" Stretch="Fill" />
 </Grid>
+

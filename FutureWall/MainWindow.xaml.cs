@@ -11,23 +11,22 @@ namespace FutureWall
         public MainWindow()
         {
             InitializeComponent();
-            Loaded += OnLoad;
 
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            WindowState = WindowState.Maximized;
-            WindowStyle = WindowStyle.None;
-            AllowsTransparency = true;
+//            WindowState = WindowState.Maximized;
+//            WindowStyle = WindowStyle.None;
+//            AllowsTransparency = true;
         }
 
-        private void OnLoad(object sender, RoutedEventArgs e)
+        protected override void OnRenderSizeChanged(SizeChangedInfo sizeInfo)
         {
-//            var page = new VisualDemo();
-//            Content = page;
-//            return;
+            base.OnRenderSizeChanged(sizeInfo);
+
+            var margin = 20;
 
             var example = new AnimationPage();
-            example.Width = 800;
-            example.Height = 600;
+            example.Width = sizeInfo.NewSize.Width - 2 * margin;
+            example.Height = sizeInfo.NewSize.Height - 2 * margin;
             example.Background = new SolidColorBrush(Colors.Chocolate);
 
             Content= example;

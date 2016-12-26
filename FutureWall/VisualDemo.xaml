@@ -5,31 +5,38 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       Title="Circle"
       d:DesignHeight="665"
-      d:DesignWidth="820"
+      d:DesignWidth="720"
       mc:Ignorable="d">
 
     <Canvas x:Name="MainPanel" Background="DarkGray">
-        <Canvas.Resources>
-            <Style TargetType="Path">
-                <Setter Property="Stroke">
-                    <Setter.Value>
-                        <ImageBrush ImageSource="Resources/mask.png" />
-                    </Setter.Value>
-                </Setter>
-            </Style>
-        </Canvas.Resources>
+        <!--        <Canvas.Resources>-->
+        <!--            <Style TargetType="Path">-->
+        <!--                <Setter Property="Stroke">-->
+        <!--                    <Setter.Value>-->
+        <!--                        <ImageBrush ImageSource="Resources/mask.png" />-->
+        <!--                    </Setter.Value>-->
+        <!--                </Setter>-->
+        <!--            </Style>-->
+        <!--        </Canvas.Resources>-->
         <Path x:Name="LeafPathSmall"
               Data="M 80,80 C 170,320 220,360 380,320 C 310,80 190,60 80,80"
               Fill="Blue"
-              Stretch="None"
-              StrokeThickness="1"  />
+              StrokeThickness="1"
+              Visibility="Hidden" />
         <Path x:Name="LeafPathBig"
-              Data="M 180,180 C 300,620 350,650 600,620 C 410,100 210,160 180,180"
+              Data="M 180,90 C 300,530 350,560 600,530 C 410,20 210,70 180,90"
               Fill="GreenYellow"
               Stretch="None"
               StrokeThickness="1"
               Visibility="Hidden" />
-        
+
+        <Path x:Name="YPath"
+              Data="M 180,90 L 280,250 L 280,500 L 320,500 L 320,250 L 410,90 L 390,90 L 280,240 L 200,90"
+              Fill="Bisque"
+              Stretch="None"
+              StrokeThickness="60" />
     </Canvas>
 </Page>
+
+
 
