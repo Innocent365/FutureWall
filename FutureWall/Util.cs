@@ -5,7 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
 
 namespace FutureWall
 {
@@ -63,10 +66,24 @@ namespace FutureWall
             Func<double, double, bool> Circle2 = (x, y) => { return false; };
         }
 
-        public static Point[] FigureContour(Size panelSize, Size singleSize)
+        public static Point[] FigureContour(Size panelSize, Size singleSize, Panel mainPanel)
         {
             var aimPoints = new List<Point>();
+            
             var pathGeo = GetPathGeometry();
+
+            var elm = new System.Windows.Shapes.Path();
+            elm.Data = pathGeo;
+            //elm.Stroke = new ImageBrush
+            //{
+            //    ImageSource = new BitmapImage(
+            //            new Uri("pack://application:,,,/Resources/mask.png", UriKind.RelativeOrAbsolute))
+            //};
+            elm.StrokeThickness = 7;
+            elm.Stroke = new LinearGradientBrush(
+                Colors.White, Colors.DarkGray,90);
+
+            mainPanel.Children.Add(elm);
 
             for (var i = 0d; i < panelSize.Width; i += singleSize.Width)
             {
@@ -79,17 +96,28 @@ namespace FutureWall
                 }
             }            
             return aimPoints.ToArray();
-
         }
 
         private static PathGeometry GetPathGeometry()
         {
             var pathGeo = new PathGeometry();
             pathGeo.Figures = PathFigureCollection.Parse("M 80,80 C 170,320 220,360 380,320 C 310,80 190,60 80,80");
-
+            
             return pathGeo;
         }
 
+        private static System.Windows.Media.Geometry GetSingleGeometry()
+        {
+            var demo = new VisualDemo();
+            var pen = new Pen(
+                new ImageBrush()
+                {
+                    ImageSource = new BitmapImage(
+                        new Uri("Resources/mask.png", UriKind.RelativeOrAbsolute))
+                }, 
+                5);
+            return demo.LeafPathSmall.Data.GetWidenedPathGeometry(pen);            
+        }
         
     }
 }

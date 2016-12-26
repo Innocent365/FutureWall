@@ -59,7 +59,7 @@ namespace FutureWall
 
         private void Run()
         {
-            var aimPoints = Geometry.FigureContour(CanvasSize, CellSize);
+            var aimPoints = Geometry.FigureContour(CanvasSize, CellSize, MainPanel);
 
             var imagePath = "pack://application:,,,/Resources/{0}.jpeg";
             for (var i = 0; i < aimPoints.Length; i++)

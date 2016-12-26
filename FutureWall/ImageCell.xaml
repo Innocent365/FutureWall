@@ -1,15 +1,17 @@
 ﻿<Grid x:Class="FutureWall.ImageCell"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             mc:Ignorable="d" 
-             d:DesignHeight="88" d:DesignWidth="88"
-      x:Name="This">
-    <Canvas Background="#a0bddc">
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      x:Name="This"
+      Margin="0"
+      d:DesignHeight="88"
+      d:DesignWidth="88"
+      mc:Ignorable="d">
+    <Canvas Background="#a0bddc" Visibility="Collapsed">
         <Canvas.OpacityMask>
-            <ImageBrush ImageSource="Resources/mask.png"/>
+            <ImageBrush ImageSource="Resources/mask.png" />
         </Canvas.OpacityMask>
     </Canvas>
-    <Image Source="Resources/0.jpeg" Margin="30" />
+    <Image Margin="30" Source="{Binding Source, ElementName=This}" />
 </Grid>
