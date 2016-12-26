@@ -29,10 +29,10 @@ namespace FutureWall
             base.OnRenderSizeChanged(sizeInfo);
             
 //            if(this.IsLoaded)
-            pathAnimationStoryboard.Begin(this);
+            _pathAnimationStoryboard.Begin(this);
         }
 
-        public Storyboard pathAnimationStoryboard = new Storyboard();
+        private readonly Storyboard _pathAnimationStoryboard = new Storyboard();
 
         public Panel MainPanel;
         public Size CanvasSize;
@@ -42,11 +42,11 @@ namespace FutureWall
         {
             MainPanel = new Canvas
             {
-                Width = this.Width,
-                Height = this.Height,
-                Background = new SolidColorBrush(Colors.BurlyWood)
+                Width = Width,
+                Height = Height,
+                Background = new SolidColorBrush(Color.FromRgb(45, 44, 48))
             };
-            this.Content = MainPanel;
+            Content = MainPanel;
             //MainPanel.RenderTransformOrigin = new Point(Width/2, Height/2);
 
             var maxLeft = double.IsNaN(Width) ? MinWidth : Width - 2 * CellSize.Width;
@@ -55,7 +55,7 @@ namespace FutureWall
             CanvasSize = new Size(maxLeft, maxTop);
         }
 
-        public Random random = new Random();
+        private readonly Random _random = new Random(3245426);
 
         private void Run()
         {
@@ -64,10 +64,10 @@ namespace FutureWall
             var imagePath = "pack://application:,,,/Resources/{0}.jpeg";
             for (var i = 0; i < aimPoints.Length; i++)
             {
-                var img = new Image
+                var img = new ImageCell
                 {
-                    Width = CellSize.Width,
-                    Height = CellSize.Height,
+                    Width  = CellSize.Width *4,
+                    Height = CellSize.Height　*4,
                     Source = new BitmapImage(new Uri(string.Format(imagePath, i), 
                         UriKind.RelativeOrAbsolute)),
                     Tag= i,
@@ -81,27 +81,26 @@ namespace FutureWall
 
         private void ApplyAnimation(FrameworkElement img)
         {
-            var left = random.NextDouble() * CanvasSize.Width;
-            var top = random.NextDouble() * CanvasSize.Height;
+            var left = _random.NextDouble() * CanvasSize.Width;
+            var top = _random.NextDouble() * CanvasSize.Height;
 
-            MatrixAnimationUsingPath matrixAnimation = new MatrixAnimationUsingPath
+            var matrixAnimation = new MatrixAnimationUsingPath
             {
                 PathGeometry = Path.Straight(new Point(left, top), (Point)img.DataContext),
                 Duration = TimeSpan.FromSeconds(2),
-                //RepeatBehavior = RepeatBehavior.Forever
+				AccelerationRatio = 0.9
             };
 
-            MatrixTransform buttonMatrixTransform = new MatrixTransform();
+            var buttonMatrixTransform = new MatrixTransform();
             img.RenderTransform = buttonMatrixTransform;
 
             var abttonName = "B" + img.Tag;
-            this.RegisterName(abttonName, buttonMatrixTransform);
+            RegisterName(abttonName, buttonMatrixTransform);
 
             Storyboard.SetTargetName(matrixAnimation, abttonName);
-            Storyboard.SetTargetProperty(matrixAnimation, new
-                PropertyPath(MatrixTransform.MatrixProperty));
+            Storyboard.SetTargetProperty(matrixAnimation, new PropertyPath(MatrixTransform.MatrixProperty));
 
-            pathAnimationStoryboard.Children.Add(matrixAnimation);
+            _pathAnimationStoryboard.Children.Add(matrixAnimation);
         }
 
         
