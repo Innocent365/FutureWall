@@ -31,7 +31,7 @@
               Visibility="Hidden" />
 
         <Path x:Name="YPath"
-              Data="M 180,90 L 280,250 L 280,500 L 320,500 L 320,250 L 410,90 L 390,90 L 280,240 L 200,90"
+              Data="M 180,90 L 280,250 L 280,500 Q 330,540 380,500 L 380,250 L 460,90 Q 425,60 390,90 L 330,240 L 240,90 Q 210,70 180,90 "
               Fill="Bisque"
               Stretch="None"
               StrokeThickness="60" />

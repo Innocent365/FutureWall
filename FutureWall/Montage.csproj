@@ -1,0 +1,730 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AC4E032E-8FA6-4E68-BABE-1F7F6275AD13}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FutureWall</RootNamespace>
+    <AssemblyName>FutureWall</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="ImageCell.xaml.cs">
+      <DependentUpon>ImageCell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VisualDemo.xaml.cs">
+      <DependentUpon>VisualDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Util.cs" />
+    <Page Include="ImageCell.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VisualDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dictionary1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="AnimationPage.cs" />
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\0.jpeg" />
+    <Resource Include="Resources\1.jpeg" />
+    <Resource Include="Resources\10.jpeg" />
+    <Resource Include="Resources\100.jpeg" />
+    <Resource Include="Resources\101.jpeg" />
+    <Resource Include="Resources\102.jpeg" />
+    <Resource Include="Resources\103.jpeg" />
+    <Resource Include="Resources\104.jpeg" />
+    <Resource Include="Resources\105.jpeg" />
+    <Resource Include="Resources\106.jpeg" />
+    <Resource Include="Resources\107.jpeg" />
+    <Resource Include="Resources\108.jpeg" />
+    <Resource Include="Resources\109.jpeg" />
+    <Resource Include="Resources\11.jpeg" />
+    <Resource Include="Resources\110.jpeg" />
+    <Resource Include="Resources\111.jpeg" />
+    <Resource Include="Resources\112.jpeg" />
+    <Resource Include="Resources\113.jpeg" />
+    <Resource Include="Resources\114.jpeg" />
+    <Resource Include="Resources\115.jpeg" />
+    <Resource Include="Resources\116.jpeg" />
+    <Resource Include="Resources\117.jpeg" />
+    <Resource Include="Resources\118.jpeg" />
+    <Resource Include="Resources\119.jpeg" />
+    <Resource Include="Resources\12.jpeg" />
+    <Resource Include="Resources\120.jpeg" />
+    <Resource Include="Resources\121.jpeg" />
+    <Resource Include="Resources\122.jpeg" />
+    <Resource Include="Resources\123.jpeg" />
+    <Resource Include="Resources\124.jpeg" />
+    <Resource Include="Resources\125.jpeg" />
+    <Resource Include="Resources\126.jpeg" />
+    <Resource Include="Resources\127.jpeg" />
+    <Resource Include="Resources\128.jpeg" />
+    <Resource Include="Resources\129.jpeg" />
+    <Resource Include="Resources\13.jpeg" />
+    <Resource Include="Resources\130.jpeg" />
+    <Resource Include="Resources\131.jpeg" />
+    <Resource Include="Resources\132.jpeg" />
+    <Resource Include="Resources\133.jpeg" />
+    <Resource Include="Resources\134.jpeg" />
+    <Resource Include="Resources\135.jpeg" />
+    <Resource Include="Resources\136.jpeg" />
+    <Resource Include="Resources\137.jpeg" />
+    <Resource Include="Resources\138.jpeg" />
+    <Resource Include="Resources\139.jpeg" />
+    <Resource Include="Resources\14.jpeg" />
+    <Resource Include="Resources\140.jpeg" />
+    <Resource Include="Resources\141.jpeg" />
+    <Resource Include="Resources\142.jpeg" />
+    <Resource Include="Resources\143.jpeg" />
+    <Resource Include="Resources\144.jpeg" />
+    <Resource Include="Resources\145.jpeg" />
+    <Resource Include="Resources\146.jpeg" />
+    <Resource Include="Resources\147.jpeg" />
+    <Resource Include="Resources\148.jpeg" />
+    <Resource Include="Resources\149.jpeg" />
+    <Resource Include="Resources\15.jpeg" />
+    <Resource Include="Resources\150.jpeg" />
+    <Resource Include="Resources\151.jpeg" />
+    <Resource Include="Resources\152.jpeg" />
+    <Resource Include="Resources\153.jpeg" />
+    <Resource Include="Resources\154.jpeg" />
+    <Resource Include="Resources\155.jpeg" />
+    <Resource Include="Resources\156.jpeg" />
+    <Resource Include="Resources\157.jpeg" />
+    <Resource Include="Resources\158.jpeg" />
+    <Resource Include="Resources\159.jpeg" />
+    <Resource Include="Resources\16.jpeg" />
+    <Resource Include="Resources\160.jpeg" />
+    <Resource Include="Resources\161.jpeg" />
+    <Resource Include="Resources\162.jpeg" />
+    <Resource Include="Resources\163.jpeg" />
+    <Resource Include="Resources\164.jpeg" />
+    <Resource Include="Resources\165.jpeg" />
+    <Resource Include="Resources\166.jpeg" />
+    <Resource Include="Resources\167.jpeg" />
+    <Resource Include="Resources\168.jpeg" />
+    <Resource Include="Resources\169.jpeg" />
+    <Resource Include="Resources\17.jpeg" />
+    <Resource Include="Resources\170.jpeg" />
+    <Resource Include="Resources\171.jpeg" />
+    <Resource Include="Resources\172.jpeg" />
+    <Resource Include="Resources\173.jpeg" />
+    <Resource Include="Resources\174.jpeg" />
+    <Resource Include="Resources\175.jpeg" />
+    <Resource Include="Resources\176.jpeg" />
+    <Resource Include="Resources\177.jpeg" />
+    <Resource Include="Resources\178.jpeg" />
+    <Resource Include="Resources\179.jpeg" />
+    <Resource Include="Resources\18.jpeg" />
+    <Resource Include="Resources\180.jpeg" />
+    <Resource Include="Resources\181.jpeg" />
+    <Resource Include="Resources\182.jpeg" />
+    <Resource Include="Resources\183.jpeg" />
+    <Resource Include="Resources\184.jpeg" />
+    <Resource Include="Resources\185.jpeg" />
+    <Resource Include="Resources\186.jpeg" />
+    <Resource Include="Resources\187.jpeg" />
+    <Resource Include="Resources\188.jpeg" />
+    <Resource Include="Resources\189.jpeg" />
+    <Resource Include="Resources\19.jpeg" />
+    <Resource Include="Resources\190.jpeg" />
+    <Resource Include="Resources\191.jpeg" />
+    <Resource Include="Resources\192.jpeg" />
+    <Resource Include="Resources\193.jpeg" />
+    <Resource Include="Resources\194.jpeg" />
+    <Resource Include="Resources\195.jpeg" />
+    <Resource Include="Resources\196.jpeg" />
+    <Resource Include="Resources\197.jpeg" />
+    <Resource Include="Resources\198.jpeg" />
+    <Resource Include="Resources\199.jpeg" />
+    <Resource Include="Resources\2.jpeg" />
+    <Resource Include="Resources\20.jpeg" />
+    <Resource Include="Resources\200.jpeg" />
+    <Resource Include="Resources\21.jpeg" />
+    <Resource Include="Resources\22.jpeg" />
+    <Resource Include="Resources\23.jpeg" />
+    <Resource Include="Resources\24.jpeg" />
+    <Resource Include="Resources\25.jpeg" />
+    <Resource Include="Resources\26.jpeg" />
+    <Resource Include="Resources\27.jpeg" />
+    <Resource Include="Resources\28.jpeg" />
+    <Resource Include="Resources\29.jpeg" />
+    <Resource Include="Resources\3.jpeg" />
+    <Resource Include="Resources\30.jpeg" />
+    <Resource Include="Resources\31.jpeg" />
+    <Resource Include="Resources\32.jpeg" />
+    <Resource Include="Resources\33.jpeg" />
+    <Resource Include="Resources\34.jpeg" />
+    <Resource Include="Resources\35.jpeg" />
+    <Resource Include="Resources\36.jpeg" />
+    <Resource Include="Resources\37.jpeg" />
+    <Resource Include="Resources\38.jpeg" />
+    <Resource Include="Resources\39.jpeg" />
+    <Resource Include="Resources\4.jpeg" />
+    <Resource Include="Resources\40.jpeg" />
+    <Resource Include="Resources\41.jpeg" />
+    <Resource Include="Resources\42.jpeg" />
+    <Resource Include="Resources\43.jpeg" />
+    <Resource Include="Resources\44.jpeg" />
+    <Resource Include="Resources\45.jpeg" />
+    <Resource Include="Resources\46.jpeg" />
+    <Resource Include="Resources\47.jpeg" />
+    <Resource Include="Resources\48.jpeg" />
+    <Resource Include="Resources\49.jpeg" />
+    <Resource Include="Resources\5.jpeg" />
+    <Resource Include="Resources\50.jpeg" />
+    <Resource Include="Resources\51.jpeg" />
+    <Resource Include="Resources\52.jpeg" />
+    <Resource Include="Resources\53.jpeg" />
+    <Resource Include="Resources\54.jpeg" />
+    <Resource Include="Resources\55.jpeg" />
+    <Resource Include="Resources\56.jpeg" />
+    <Resource Include="Resources\57.jpeg" />
+    <Resource Include="Resources\58.jpeg" />
+    <Resource Include="Resources\59.jpeg" />
+    <Resource Include="Resources\6.jpeg" />
+    <Resource Include="Resources\60.jpeg" />
+    <Resource Include="Resources\61.jpeg" />
+    <Resource Include="Resources\62.jpeg" />
+    <Resource Include="Resources\63.jpeg" />
+    <Resource Include="Resources\64.jpeg" />
+    <Resource Include="Resources\65.jpeg" />
+    <Resource Include="Resources\66.jpeg" />
+    <Resource Include="Resources\67.jpeg" />
+    <Resource Include="Resources\68.jpeg" />
+    <Resource Include="Resources\69.jpeg" />
+    <Resource Include="Resources\7.jpeg" />
+    <Resource Include="Resources\70.jpeg" />
+    <Resource Include="Resources\71.jpeg" />
+    <Resource Include="Resources\72.jpeg" />
+    <Resource Include="Resources\73.jpeg" />
+    <Resource Include="Resources\74.jpeg" />
+    <Resource Include="Resources\75.jpeg" />
+    <Resource Include="Resources\76.jpeg" />
+    <Resource Include="Resources\77.jpeg" />
+    <Resource Include="Resources\78.jpeg" />
+    <Resource Include="Resources\79.jpeg" />
+    <Resource Include="Resources\8.jpeg" />
+    <Resource Include="Resources\80.jpeg" />
+    <Resource Include="Resources\81.jpeg" />
+    <Resource Include="Resources\82.jpeg" />
+    <Resource Include="Resources\83.jpeg" />
+    <Resource Include="Resources\84.jpeg" />
+    <Resource Include="Resources\85.jpeg" />
+    <Resource Include="Resources\86.jpeg" />
+    <Resource Include="Resources\87.jpeg" />
+    <Resource Include="Resources\88.jpeg" />
+    <Resource Include="Resources\89.jpeg" />
+    <Resource Include="Resources\9.jpeg" />
+    <Resource Include="Resources\90.jpeg" />
+    <Resource Include="Resources\91.jpeg" />
+    <Resource Include="Resources\92.jpeg" />
+    <Resource Include="Resources\93.jpeg" />
+    <Resource Include="Resources\94.jpeg" />
+    <Resource Include="Resources\95.jpeg" />
+    <Resource Include="Resources\96.jpeg" />
+    <Resource Include="Resources\97.jpeg" />
+    <Resource Include="Resources\98.jpeg" />
+    <Resource Include="Resources\99.jpeg" />
+    <Resource Include="Resources\mask.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\201.jpeg" />
+    <Resource Include="Resources\202.jpeg" />
+    <Resource Include="Resources\203.jpeg" />
+    <Resource Include="Resources\204.jpeg" />
+    <Resource Include="Resources\205.jpeg" />
+    <Resource Include="Resources\206.jpeg" />
+    <Resource Include="Resources\207.jpeg" />
+    <Resource Include="Resources\208.jpeg" />
+    <Resource Include="Resources\209.jpeg" />
+    <Resource Include="Resources\210.jpeg" />
+    <Resource Include="Resources\211.jpeg" />
+    <Resource Include="Resources\212.jpeg" />
+    <Resource Include="Resources\213.jpeg" />
+    <Resource Include="Resources\214.jpeg" />
+    <Resource Include="Resources\215.jpeg" />
+    <Resource Include="Resources\216.jpeg" />
+    <Resource Include="Resources\217.jpeg" />
+    <Resource Include="Resources\218.jpeg" />
+    <Resource Include="Resources\219.jpeg" />
+    <Resource Include="Resources\220.jpeg" />
+    <Resource Include="Resources\221.jpeg" />
+    <Resource Include="Resources\222.jpeg" />
+    <Resource Include="Resources\223.jpeg" />
+    <Resource Include="Resources\224.jpeg" />
+    <Resource Include="Resources\225.jpeg" />
+    <Resource Include="Resources\226.jpeg" />
+    <Resource Include="Resources\227.jpeg" />
+    <Resource Include="Resources\228.jpeg" />
+    <Resource Include="Resources\229.jpeg" />
+    <Resource Include="Resources\230.jpeg" />
+    <Resource Include="Resources\231.jpeg" />
+    <Resource Include="Resources\232.jpeg" />
+    <Resource Include="Resources\233.jpeg" />
+    <Resource Include="Resources\234.jpeg" />
+    <Resource Include="Resources\235.jpeg" />
+    <Resource Include="Resources\236.jpeg" />
+    <Resource Include="Resources\237.jpeg" />
+    <Resource Include="Resources\238.jpeg" />
+    <Resource Include="Resources\239.jpeg" />
+    <Resource Include="Resources\240.jpeg" />
+    <Resource Include="Resources\241.jpeg" />
+    <Resource Include="Resources\242.jpeg" />
+    <Resource Include="Resources\243.jpeg" />
+    <Resource Include="Resources\244.jpeg" />
+    <Resource Include="Resources\245.jpeg" />
+    <Resource Include="Resources\246.jpeg" />
+    <Resource Include="Resources\247.jpeg" />
+    <Resource Include="Resources\248.jpeg" />
+    <Resource Include="Resources\249.jpeg" />
+    <Resource Include="Resources\250.jpeg" />
+    <Resource Include="Resources\251.jpeg" />
+    <Resource Include="Resources\252.jpeg" />
+    <Resource Include="Resources\253.jpeg" />
+    <Resource Include="Resources\254.jpeg" />
+    <Resource Include="Resources\255.jpeg" />
+    <Resource Include="Resources\256.jpeg" />
+    <Resource Include="Resources\257.jpeg" />
+    <Resource Include="Resources\258.jpeg" />
+    <Resource Include="Resources\259.jpeg" />
+    <Resource Include="Resources\260.jpeg" />
+    <Resource Include="Resources\261.jpeg" />
+    <Resource Include="Resources\262.jpeg" />
+    <Resource Include="Resources\263.jpeg" />
+    <Resource Include="Resources\264.jpeg" />
+    <Resource Include="Resources\265.jpeg" />
+    <Resource Include="Resources\266.jpeg" />
+    <Resource Include="Resources\267.jpeg" />
+    <Resource Include="Resources\268.jpeg" />
+    <Resource Include="Resources\269.jpeg" />
+    <Resource Include="Resources\270.jpeg" />
+    <Resource Include="Resources\271.jpeg" />
+    <Resource Include="Resources\272.jpeg" />
+    <Resource Include="Resources\273.jpeg" />
+    <Resource Include="Resources\274.jpeg" />
+    <Resource Include="Resources\275.jpeg" />
+    <Resource Include="Resources\276.jpeg" />
+    <Resource Include="Resources\277.jpeg" />
+    <Resource Include="Resources\278.jpeg" />
+    <Resource Include="Resources\279.jpeg" />
+    <Resource Include="Resources\280.jpeg" />
+    <Resource Include="Resources\281.jpeg" />
+    <Resource Include="Resources\282.jpeg" />
+    <Resource Include="Resources\283.jpeg" />
+    <Resource Include="Resources\284.jpeg" />
+    <Resource Include="Resources\285.jpeg" />
+    <Resource Include="Resources\286.jpeg" />
+    <Resource Include="Resources\287.jpeg" />
+    <Resource Include="Resources\288.jpeg" />
+    <Resource Include="Resources\289.jpeg" />
+    <Resource Include="Resources\290.jpeg" />
+    <Resource Include="Resources\291.jpeg" />
+    <Resource Include="Resources\292.jpeg" />
+    <Resource Include="Resources\293.jpeg" />
+    <Resource Include="Resources\294.jpeg" />
+    <Resource Include="Resources\295.jpeg" />
+    <Resource Include="Resources\296.jpeg" />
+    <Resource Include="Resources\297.jpeg" />
+    <Resource Include="Resources\298.jpeg" />
+    <Resource Include="Resources\299.jpeg" />
+    <Resource Include="Resources\300.jpeg" />
+    <Resource Include="Resources\301.jpeg" />
+    <Resource Include="Resources\302.jpeg" />
+    <Resource Include="Resources\303.jpeg" />
+    <Resource Include="Resources\304.jpeg" />
+    <Resource Include="Resources\305.jpeg" />
+    <Resource Include="Resources\306.jpeg" />
+    <Resource Include="Resources\307.jpeg" />
+    <Resource Include="Resources\308.jpeg" />
+    <Resource Include="Resources\309.jpeg" />
+    <Resource Include="Resources\310.jpeg" />
+    <Resource Include="Resources\311.jpeg" />
+    <Resource Include="Resources\312.jpeg" />
+    <Resource Include="Resources\313.jpeg" />
+    <Resource Include="Resources\314.jpeg" />
+    <Resource Include="Resources\315.jpeg" />
+    <Resource Include="Resources\316.jpeg" />
+    <Resource Include="Resources\317.jpeg" />
+    <Resource Include="Resources\318.jpeg" />
+    <Resource Include="Resources\319.jpeg" />
+    <Resource Include="Resources\320.jpeg" />
+    <Resource Include="Resources\321.jpeg" />
+    <Resource Include="Resources\322.jpeg" />
+    <Resource Include="Resources\323.jpeg" />
+    <Resource Include="Resources\324.jpeg" />
+    <Resource Include="Resources\325.jpeg" />
+    <Resource Include="Resources\326.jpeg" />
+    <Resource Include="Resources\327.jpeg" />
+    <Resource Include="Resources\328.jpeg" />
+    <Resource Include="Resources\329.jpeg" />
+    <Resource Include="Resources\330.jpeg" />
+    <Resource Include="Resources\331.jpeg" />
+    <Resource Include="Resources\332.jpeg" />
+    <Resource Include="Resources\333.jpeg" />
+    <Resource Include="Resources\334.jpeg" />
+    <Resource Include="Resources\335.jpeg" />
+    <Resource Include="Resources\336.jpeg" />
+    <Resource Include="Resources\337.jpeg" />
+    <Resource Include="Resources\338.jpeg" />
+    <Resource Include="Resources\339.jpeg" />
+    <Resource Include="Resources\340.jpeg" />
+    <Resource Include="Resources\341.jpeg" />
+    <Resource Include="Resources\342.jpeg" />
+    <Resource Include="Resources\343.jpeg" />
+    <Resource Include="Resources\344.jpeg" />
+    <Resource Include="Resources\345.jpeg" />
+    <Resource Include="Resources\346.jpeg" />
+    <Resource Include="Resources\347.jpeg" />
+    <Resource Include="Resources\348.jpeg" />
+    <Resource Include="Resources\349.jpeg" />
+    <Resource Include="Resources\350.jpeg" />
+    <Resource Include="Resources\351.jpeg" />
+    <Resource Include="Resources\352.jpeg" />
+    <Resource Include="Resources\353.jpeg" />
+    <Resource Include="Resources\354.jpeg" />
+    <Resource Include="Resources\355.jpeg" />
+    <Resource Include="Resources\356.jpeg" />
+    <Resource Include="Resources\357.jpeg" />
+    <Resource Include="Resources\358.jpeg" />
+    <Resource Include="Resources\359.jpeg" />
+    <Resource Include="Resources\360.jpeg" />
+    <Resource Include="Resources\361.jpeg" />
+    <Resource Include="Resources\362.jpeg" />
+    <Resource Include="Resources\363.jpeg" />
+    <Resource Include="Resources\364.jpeg" />
+    <Resource Include="Resources\365.jpeg" />
+    <Resource Include="Resources\366.jpeg" />
+    <Resource Include="Resources\367.jpeg" />
+    <Resource Include="Resources\368.jpeg" />
+    <Resource Include="Resources\369.jpeg" />
+    <Resource Include="Resources\370.jpeg" />
+    <Resource Include="Resources\371.jpeg" />
+    <Resource Include="Resources\372.jpeg" />
+    <Resource Include="Resources\373.jpeg" />
+    <Resource Include="Resources\374.jpeg" />
+    <Resource Include="Resources\375.jpeg" />
+    <Resource Include="Resources\376.jpeg" />
+    <Resource Include="Resources\377.jpeg" />
+    <Resource Include="Resources\378.jpeg" />
+    <Resource Include="Resources\379.jpeg" />
+    <Resource Include="Resources\380.jpeg" />
+    <Resource Include="Resources\381.jpeg" />
+    <Resource Include="Resources\382.jpeg" />
+    <Resource Include="Resources\383.jpeg" />
+    <Resource Include="Resources\384.jpeg" />
+    <Resource Include="Resources\385.jpeg" />
+    <Resource Include="Resources\386.jpeg" />
+    <Resource Include="Resources\387.jpeg" />
+    <Resource Include="Resources\388.jpeg" />
+    <Resource Include="Resources\389.jpeg" />
+    <Resource Include="Resources\390.jpeg" />
+    <Resource Include="Resources\391.jpeg" />
+    <Resource Include="Resources\392.jpeg" />
+    <Resource Include="Resources\393.jpeg" />
+    <Resource Include="Resources\394.jpeg" />
+    <Resource Include="Resources\395.jpeg" />
+    <Resource Include="Resources\396.jpeg" />
+    <Resource Include="Resources\397.jpeg" />
+    <Resource Include="Resources\398.jpeg" />
+    <Resource Include="Resources\399.jpeg" />
+    <Resource Include="Resources\400.jpeg" />
+    <Resource Include="Resources\401.jpeg" />
+    <Resource Include="Resources\402.jpeg" />
+    <Resource Include="Resources\403.jpeg" />
+    <Resource Include="Resources\404.jpeg" />
+    <Resource Include="Resources\405.jpeg" />
+    <Resource Include="Resources\406.jpeg" />
+    <Resource Include="Resources\407.jpeg" />
+    <Resource Include="Resources\408.jpeg" />
+    <Resource Include="Resources\409.jpeg" />
+    <Resource Include="Resources\410.jpeg" />
+    <Resource Include="Resources\411.jpeg" />
+    <Resource Include="Resources\412.jpeg" />
+    <Resource Include="Resources\413.jpeg" />
+    <Resource Include="Resources\414.jpeg" />
+    <Resource Include="Resources\415.jpeg" />
+    <Resource Include="Resources\416.jpeg" />
+    <Resource Include="Resources\417.jpeg" />
+    <Resource Include="Resources\418.jpeg" />
+    <Resource Include="Resources\419.jpeg" />
+    <Resource Include="Resources\420.jpeg" />
+    <Resource Include="Resources\421.jpeg" />
+    <Resource Include="Resources\422.jpeg" />
+    <Resource Include="Resources\423.jpeg" />
+    <Resource Include="Resources\424.jpeg" />
+    <Resource Include="Resources\425.jpeg" />
+    <Resource Include="Resources\426.jpeg" />
+    <Resource Include="Resources\427.jpeg" />
+    <Resource Include="Resources\428.jpeg" />
+    <Resource Include="Resources\429.jpeg" />
+    <Resource Include="Resources\430.jpeg" />
+    <Resource Include="Resources\431.jpeg" />
+    <Resource Include="Resources\432.jpeg" />
+    <Resource Include="Resources\433.jpeg" />
+    <Resource Include="Resources\434.jpeg" />
+    <Resource Include="Resources\435.jpeg" />
+    <Resource Include="Resources\436.jpeg" />
+    <Resource Include="Resources\437.jpeg" />
+    <Resource Include="Resources\438.jpeg" />
+    <Resource Include="Resources\439.jpeg" />
+    <Resource Include="Resources\440.jpeg" />
+    <Resource Include="Resources\441.jpeg" />
+    <Resource Include="Resources\442.jpeg" />
+    <Resource Include="Resources\443.jpeg" />
+    <Resource Include="Resources\444.jpeg" />
+    <Resource Include="Resources\445.jpeg" />
+    <Resource Include="Resources\446.jpeg" />
+    <Resource Include="Resources\447.jpeg" />
+    <Resource Include="Resources\448.jpeg" />
+    <Resource Include="Resources\449.jpeg" />
+    <Resource Include="Resources\450.jpeg" />
+    <Resource Include="Resources\451.jpeg" />
+    <Resource Include="Resources\452.jpeg" />
+    <Resource Include="Resources\453.jpeg" />
+    <Resource Include="Resources\454.jpeg" />
+    <Resource Include="Resources\455.jpeg" />
+    <Resource Include="Resources\456.jpeg" />
+    <Resource Include="Resources\457.jpeg" />
+    <Resource Include="Resources\458.jpeg" />
+    <Resource Include="Resources\459.jpeg" />
+    <Resource Include="Resources\460.jpeg" />
+    <Resource Include="Resources\461.jpeg" />
+    <Resource Include="Resources\462.jpeg" />
+    <Resource Include="Resources\463.jpeg" />
+    <Resource Include="Resources\464.jpeg" />
+    <Resource Include="Resources\465.jpeg" />
+    <Resource Include="Resources\466.jpeg" />
+    <Resource Include="Resources\467.jpeg" />
+    <Resource Include="Resources\468.jpeg" />
+    <Resource Include="Resources\469.jpeg" />
+    <Resource Include="Resources\470.jpeg" />
+    <Resource Include="Resources\471.jpeg" />
+    <Resource Include="Resources\472.jpeg" />
+    <Resource Include="Resources\473.jpeg" />
+    <Resource Include="Resources\474.jpeg" />
+    <Resource Include="Resources\475.jpeg" />
+    <Resource Include="Resources\476.jpeg" />
+    <Resource Include="Resources\477.jpeg" />
+    <Resource Include="Resources\478.jpeg" />
+    <Resource Include="Resources\479.jpeg" />
+    <Resource Include="Resources\480.jpeg" />
+    <Resource Include="Resources\481.jpeg" />
+    <Resource Include="Resources\482.jpeg" />
+    <Resource Include="Resources\483.jpeg" />
+    <Resource Include="Resources\484.jpeg" />
+    <Resource Include="Resources\485.jpeg" />
+    <Resource Include="Resources\486.jpeg" />
+    <Resource Include="Resources\487.jpeg" />
+    <Resource Include="Resources\488.jpeg" />
+    <Resource Include="Resources\489.jpeg" />
+    <Resource Include="Resources\490.jpeg" />
+    <Resource Include="Resources\491.jpeg" />
+    <Resource Include="Resources\492.jpeg" />
+    <Resource Include="Resources\493.jpeg" />
+    <Resource Include="Resources\494.jpeg" />
+    <Resource Include="Resources\495.jpeg" />
+    <Resource Include="Resources\496.jpeg" />
+    <Resource Include="Resources\497.jpeg" />
+    <Resource Include="Resources\498.jpeg" />
+    <Resource Include="Resources\499.jpeg" />
+    <Resource Include="Resources\500.jpeg" />
+    <Resource Include="Resources\501.jpeg" />
+    <Resource Include="Resources\502.jpeg" />
+    <Resource Include="Resources\503.jpeg" />
+    <Resource Include="Resources\504.jpeg" />
+    <Resource Include="Resources\505.jpeg" />
+    <Resource Include="Resources\506.jpeg" />
+    <Resource Include="Resources\507.jpeg" />
+    <Resource Include="Resources\508.jpeg" />
+    <Resource Include="Resources\509.jpeg" />
+    <Resource Include="Resources\510.jpeg" />
+    <Resource Include="Resources\511.jpeg" />
+    <Resource Include="Resources\512.jpeg" />
+    <Resource Include="Resources\513.jpeg" />
+    <Resource Include="Resources\514.jpeg" />
+    <Resource Include="Resources\515.jpeg" />
+    <Resource Include="Resources\516.jpeg" />
+    <Resource Include="Resources\517.jpeg" />
+    <Resource Include="Resources\518.jpeg" />
+    <Resource Include="Resources\519.jpeg" />
+    <Resource Include="Resources\520.jpeg" />
+    <Resource Include="Resources\521.jpeg" />
+    <Resource Include="Resources\522.jpeg" />
+    <Resource Include="Resources\523.jpeg" />
+    <Resource Include="Resources\524.jpeg" />
+    <Resource Include="Resources\525.jpeg" />
+    <Resource Include="Resources\526.jpeg" />
+    <Resource Include="Resources\527.jpeg" />
+    <Resource Include="Resources\528.jpeg" />
+    <Resource Include="Resources\529.jpeg" />
+    <Resource Include="Resources\530.jpeg" />
+    <Resource Include="Resources\531.jpeg" />
+    <Resource Include="Resources\532.jpeg" />
+    <Resource Include="Resources\533.jpeg" />
+    <Resource Include="Resources\534.jpeg" />
+    <Resource Include="Resources\535.jpeg" />
+    <Resource Include="Resources\536.jpeg" />
+    <Resource Include="Resources\537.jpeg" />
+    <Resource Include="Resources\538.jpeg" />
+    <Resource Include="Resources\539.jpeg" />
+    <Resource Include="Resources\540.jpeg" />
+    <Resource Include="Resources\541.jpeg" />
+    <Resource Include="Resources\542.jpeg" />
+    <Resource Include="Resources\543.jpeg" />
+    <Resource Include="Resources\544.jpeg" />
+    <Resource Include="Resources\545.jpeg" />
+    <Resource Include="Resources\546.jpeg" />
+    <Resource Include="Resources\547.jpeg" />
+    <Resource Include="Resources\548.jpeg" />
+    <Resource Include="Resources\549.jpeg" />
+    <Resource Include="Resources\550.jpeg" />
+    <Resource Include="Resources\551.jpeg" />
+    <Resource Include="Resources\552.jpeg" />
+    <Resource Include="Resources\553.jpeg" />
+    <Resource Include="Resources\554.jpeg" />
+    <Resource Include="Resources\555.jpeg" />
+    <Resource Include="Resources\556.jpeg" />
+    <Resource Include="Resources\557.jpeg" />
+    <Resource Include="Resources\558.jpeg" />
+    <Resource Include="Resources\559.jpeg" />
+    <Resource Include="Resources\560.jpeg" />
+    <Resource Include="Resources\561.jpeg" />
+    <Resource Include="Resources\562.jpeg" />
+    <Resource Include="Resources\563.jpeg" />
+    <Resource Include="Resources\564.jpeg" />
+    <Resource Include="Resources\565.jpeg" />
+    <Resource Include="Resources\566.jpeg" />
+    <Resource Include="Resources\567.jpeg" />
+    <Resource Include="Resources\568.jpeg" />
+    <Resource Include="Resources\569.jpeg" />
+    <Resource Include="Resources\570.jpeg" />
+    <Resource Include="Resources\571.jpeg" />
+    <Resource Include="Resources\572.jpeg" />
+    <Resource Include="Resources\573.jpeg" />
+    <Resource Include="Resources\574.jpeg" />
+    <Resource Include="Resources\575.jpeg" />
+    <Resource Include="Resources\576.jpeg" />
+    <Resource Include="Resources\577.jpeg" />
+    <Resource Include="Resources\578.jpeg" />
+    <Resource Include="Resources\579.jpeg" />
+    <Resource Include="Resources\580.jpeg" />
+    <Resource Include="Resources\581.jpeg" />
+    <Resource Include="Resources\582.jpeg" />
+    <Resource Include="Resources\583.jpeg" />
+    <Resource Include="Resources\584.jpeg" />
+    <Resource Include="Resources\585.jpeg" />
+    <Resource Include="Resources\586.jpeg" />
+    <Resource Include="Resources\587.jpeg" />
+    <Resource Include="Resources\588.jpeg" />
+    <Resource Include="Resources\589.jpeg" />
+    <Resource Include="Resources\590.jpeg" />
+    <Resource Include="Resources\591.jpeg" />
+    <Resource Include="Resources\592.jpeg" />
+    <Resource Include="Resources\593.jpeg" />
+    <Resource Include="Resources\594.jpeg" />
+    <Resource Include="Resources\595.jpeg" />
+    <Resource Include="Resources\596.jpeg" />
+    <Resource Include="Resources\597.jpeg" />
+    <Resource Include="Resources\598.jpeg" />
+    <Resource Include="Resources\599.jpeg" />
+    <Resource Include="Resources\600.jpeg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

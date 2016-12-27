@@ -1,9 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
+using Timer = System.Timers.Timer;
 
 namespace FutureWall
 {
@@ -20,7 +23,7 @@ namespace FutureWall
                 Height = _minSize.Height;
             }
 
-            _cellSize = new Size(Width*_cellScale.Width, Height*_cellScale.Height);
+            _cellSize = new Size(15, 15); //Width*_cellScale.Width, Height*_cellScale.Height);
         }
 
         private readonly Size _minSize = new Size(720, 405);
@@ -31,19 +34,43 @@ namespace FutureWall
         protected override void OnRenderSizeChanged(SizeChangedInfo sizeInfo)
         {
             base.OnRenderSizeChanged(sizeInfo);
-            _pathAnimationStoryboard.Stop(this);
+
+            _pathAnimationStoryboard.ToList().ForEach(p=>p.Stop());
 
             MainPanel.Width = sizeInfo.NewSize.Width;
             MainPanel.Height = sizeInfo.NewSize.Height;
 
-            _cellSize = new Size(Width * _cellScale.Width, Height * _cellScale.Height);
-            
+            //_cellSize = new Size(Width * _cellScale.Width, Height * _cellScale.Height);
+            _cellSize = new Size(15, 15);
+
             Run();
-            _pathAnimationStoryboard.Begin(this);
-            _pathAnimationStoryboard.RepeatBehavior = RepeatBehavior.Forever;
+
+            var enn = _pathAnimationStoryboard.AsEnumerable().GetEnumerator();
+
+            Storyboard current = new Storyboard();
+
+            Timer timer = new Timer(3000);
+            timer.Elapsed += (sender, args) =>
+            {
+                if (current != null) this.Dispatcher.Invoke(() => {
+                    MainPanel.Children.Clear();
+                });                
+                if (enn.MoveNext() == false) enn.Reset();
+                current = enn.Current;
+                if (current != null)
+                    this.Dispatcher.Invoke(() =>
+                    {
+                        var list = (List<ImageCell>) (current.GetValue(TagProperty));
+                        list.ForEach(p => MainPanel.Children.Add(p));
+                        current.Begin(this);
+                    });
+            };
+
+            timer.Start();
+
         }
 
-        private readonly Storyboard _pathAnimationStoryboard = new Storyboard();
+        private readonly List<Storyboard> _pathAnimationStoryboard = new List<Storyboard>();
 
         public Panel MainPanel;
         public Size CanvasSize;
@@ -64,35 +91,54 @@ namespace FutureWall
 
         private void Run()
         {
-            var maxLeft = Width - 2 * _cellSize.Width;
-            var maxTop = Height - 2 * _cellSize.Height;
+            var maxLeft = Width - 2*_cellSize.Width;
+            var maxTop = Height - 2*_cellSize.Height;
 
             CanvasSize = new Size(maxLeft, maxTop);
 
-            var aimPoints = Geometry.FigureContour(CanvasSize, _cellSize);
+            GenerateAnimation();
+        }
+
+        private void GenerateAnimation()
+        {
+            var aimPointsPage = Geometry.FigureContour(CanvasSize, _cellSize);
 
             var imagePath = "pack://application:,,,/Resources/{0}.jpeg";
-            for (var i = 0; i < aimPoints.Length; i++)
+
+            for (int index = 0; index < aimPointsPage.Count; index++)
             {
-                var img = new ImageCell
+                var pointse = aimPointsPage[index];
+
+                var storyboard = new Storyboard();
+
+                List<ImageCell> list = new List<ImageCell>();
+                for (var i = 0; i < pointse.Length; i++)
                 {
-                    Width  = _cellSize.Width,
-                    Height = _cellSize.Height,
-                    Margin = new Thickness(0),
-                    Source = new BitmapImage(new Uri(string.Format(imagePath, i), 
-                        UriKind.RelativeOrAbsolute)),
-                    Tag= i,
-                    DataContext = aimPoints[i]
-                };
+                    var img = new ImageCell
+                    {
+                        Width = _cellSize.Width,
+                        Height = _cellSize.Height,
+                        Margin = new Thickness(0),
+                        Source = new BitmapImage(new Uri(string.Format(imagePath, i),
+                            UriKind.RelativeOrAbsolute)),
+                        Tag = index.ToString() + i,
+                        DataContext = pointse[i]
+                    };
 
-                MainPanel.Children.Add(img);
+                    list.Add(img);
 
-                ApplyStraightAnimation(img);
-                ApplyBezierAnimation(img);
+                    ApplyStraightAnimation(img, storyboard);
+                    //ApplyBezierAnimation(img);
+                }
+                
+                storyboard.SetValue(TagProperty, list);
+
+                _pathAnimationStoryboard.Add(storyboard);
+
             }
         }
 
-        private void ApplyStraightAnimation(FrameworkElement img)
+        private void ApplyStraightAnimation(FrameworkElement img, Storyboard storyboard)
         {
             var left = _random.NextDouble() * CanvasSize.Width;
             var top = _random.NextDouble() * CanvasSize.Height;
@@ -113,7 +159,7 @@ namespace FutureWall
             Storyboard.SetTargetName(matrixAnimation, regName);
             Storyboard.SetTargetProperty(matrixAnimation, new PropertyPath(MatrixTransform.MatrixProperty));
 
-            _pathAnimationStoryboard.Children.Add(matrixAnimation);
+            storyboard.Children.Add(matrixAnimation);
         }
 
         private void ApplyBezierAnimation(FrameworkElement img)
@@ -137,7 +183,9 @@ namespace FutureWall
             Storyboard.SetTargetName(matrixAnimation, regName);
             Storyboard.SetTargetProperty(matrixAnimation, new PropertyPath(MatrixTransform.MatrixProperty));
 
-            _pathAnimationStoryboard.Children.Add(matrixAnimation);
+            var storyboard = new Storyboard();
+            storyboard.Children.Add(matrixAnimation);
+            _pathAnimationStoryboard.Add(storyboard);
         }
     }
 }
