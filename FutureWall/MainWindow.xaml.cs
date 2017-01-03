@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Media;
 
 namespace FutureWall
@@ -13,9 +14,9 @@ namespace FutureWall
             InitializeComponent();
 
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
-//            WindowState = WindowState.Maximized;
-//            WindowStyle = WindowStyle.None;
-//            AllowsTransparency = true;
+            //WindowState = WindowState.Maximized;
+            //WindowStyle = WindowStyle.None;
+            //AllowsTransparency = true;
         }
 
         protected override void OnRenderSizeChanged(SizeChangedInfo sizeInfo)

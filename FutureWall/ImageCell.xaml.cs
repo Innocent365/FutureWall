@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace FutureWall {
 	public partial class ImageCell {
@@ -25,7 +14,21 @@ namespace FutureWall {
 		public ImageSource Source
 		{
 			get { return (ImageSource) GetValue(SourceProperty); }
-			set { SetValue(SourceProperty, value); }
-		}
+			set { SetValue(SourceProperty, value); }		
+        }
+
+
+	    public Point Location
+	    {
+	        get
+	        {
+	            return new Point(Canvas.GetLeft(this), Canvas.GetTop(this));
+	        }
+	        set
+	        {
+	            Canvas.SetLeft(this, value.X);
+	            Canvas.SetTop(this, value.Y);
+	        }
+	    }
 	}
 }

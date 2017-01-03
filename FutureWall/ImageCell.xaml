@@ -13,6 +13,13 @@
     <!--            <ImageBrush ImageSource="Resources/mask.png" />-->
     <!--        </Canvas.OpacityMask>-->
     <!--    </Canvas>-->
-    <Image Source="{Binding Source, ElementName=This}" Stretch="Fill" />
+    <Image x:Name="ImageElm"
+           Width="{Binding Width,
+                           ElementName=This}"
+           Height="{Binding Height,
+                            ElementName=This}"
+           Source="{Binding Source,
+                            ElementName=This}"
+           Stretch="Fill" />
 </Grid>
 
