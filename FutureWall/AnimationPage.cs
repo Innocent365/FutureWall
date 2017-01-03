@@ -71,8 +71,7 @@ namespace FutureWall
             var story = stories[index];
 
             EventHandler onCompleted = (sender, args) =>
-            {
-                //Thread.Sleep(2000);
+            {                
                 index++;
                 Console.WriteLine("Here we go, " + index);
                 if (index >= stories.Count)

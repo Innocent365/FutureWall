@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Media.Imaging;
 
 namespace FutureWall
 {
@@ -34,15 +29,15 @@ namespace FutureWall
         public static PathGeometry Straight(Point startP, Point endP)
         {
             PathGeometry animationPath = new PathGeometry();
+
             PathFigure pFigure = new PathFigure();
-            pFigure.StartPoint = new Point(startP.X, startP.Y);
+            pFigure.StartPoint = new Point(startP.X, startP.Y);            
 
-            PolyLineSegment pBezierSegment = new PolyLineSegment();
-            
-            pBezierSegment.Points.Add(new Point(endP.X - 10, endP.Y + 5));
-            pBezierSegment.Points.Add(new Point(endP.X, endP.Y));
+            PolyLineSegment lineSegment = new PolyLineSegment();            
+            lineSegment.Points.Add(new Point(endP.X - 10, endP.Y + 5));
+            lineSegment.Points.Add(new Point(endP.X, endP.Y));
 
-            pFigure.Segments.Add(pBezierSegment);
+            pFigure.Segments.Add(lineSegment);
             animationPath.Figures.Add(pFigure);
 
             animationPath.Freeze();

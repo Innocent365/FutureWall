@@ -18,17 +18,16 @@ namespace FutureWall {
         }
 
 
-	    public Point Location
-	    {
-	        get
-	        {
-	            return new Point(Canvas.GetLeft(this), Canvas.GetTop(this));
-	        }
-	        set
-	        {
-	            Canvas.SetLeft(this, value.X);
-	            Canvas.SetTop(this, value.Y);
-	        }
-	    }
+	    public Point Location { get; set; }
+	        //get
+	        //{
+	        //    return new Point(Canvas.GetLeft(this), Canvas.GetTop(this));
+	        //}
+	        //set
+	        //{
+	        //    Canvas.SetLeft(this, value.X);
+	        //    Canvas.SetTop(this, value.Y);
+	        //}
+	    
 	}
 }

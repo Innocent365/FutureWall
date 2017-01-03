@@ -4,6 +4,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
+using System.Windows.Media.Imaging;
 
 namespace FutureWall
 {
@@ -12,9 +13,19 @@ namespace FutureWall
         public Story(string pathStr, Panel panel)
         {
             _pathGeometry = new PathGeometry{
-                Figures = PathFigureCollection.Parse(pathStr)
+                Figures = PathFigureCollection.Parse(pathStr),
+                //FillRule = FillRule.Nonzero
             };
+
+            //显示轨迹，路径
+            //var elm = new System.Windows.Shapes.Path();
+            //elm.Data = _pathGeometry;
+            //elm.Stroke = new SolidColorBrush { Color = Colors.Aquamarine };
+            //elm.StrokeThickness = 10;
+            //panel.Children.Add(elm);
+
             _panel = panel;
+            //_panel.RenderTransformOrigin = new Point(0.5,0.5);
         }
 
         private readonly PathGeometry _pathGeometry;
@@ -33,6 +44,7 @@ namespace FutureWall
         {
             var points = new List<Point>();
             var singleSize = AnimationPage.CellSize;
+
             for (var j = 0d; j < panelSize.Height; j += singleSize.Height)
             {
                 for (var i = 0d; i < panelSize.Width; i += singleSize.Width)
@@ -40,7 +52,7 @@ namespace FutureWall
                     var rect = new Rect(i, j, singleSize.Width, singleSize.Height);
 
                     if (_pathGeometry.FillContains(new RectangleGeometry(rect), 0.00001, ToleranceType.Relative))
-                        points.Add(new Point(i, j));
+                    points.Add(new Point(i, j));
                 }
             }
             return points;
@@ -62,11 +74,12 @@ namespace FutureWall
 
                 if (img.DataContext == null)
                     img.Location = new Point(random.NextDouble()*left, random.NextDouble()*top);
-                //else img.Location = (Point) img.Location;
+                else img.Location = (Point) img.DataContext;
                 img.DataContext = _contourPoints[i];
                 ApplyStraightAnimation(img);
             }
 
+            
             for (var j = i; j < imageCells.Count; j++)
             {
                 var img = imageCells[j];
@@ -81,15 +94,17 @@ namespace FutureWall
         #endregion
 
         public void ApplyStraightAnimation(ImageCell img)
-        {            
+        {
+
             var matrixAnimation = new MatrixAnimationUsingPath
             {
                 PathGeometry = Path.Straight(img.Location, (Point)img.DataContext),
                 Duration = TimeSpan.FromSeconds(2),
-                AccelerationRatio = 0.9
+                AccelerationRatio = 0.9,
             };
 
             var buttonMatrixTransform = new MatrixTransform();
+            
             img.RenderTransform = buttonMatrixTransform;
 
             var regName = "A" + new Random().Next(600);
@@ -101,7 +116,7 @@ namespace FutureWall
 
             Storyboard.SetTargetName(matrixAnimation, regName);
             Storyboard.SetTargetProperty(matrixAnimation, new PropertyPath(MatrixTransform.MatrixProperty));
-
+            
             Children.Add(matrixAnimation);
         }
     }
