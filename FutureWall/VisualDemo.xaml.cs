@@ -29,30 +29,12 @@ namespace FutureWall
 
             foreach (var canvase in groups)
             {
-                Geometry geo;
                 
-                var paths = canvase.Children.OfType<System.Windows.Shapes.Path>().ToList();
-                if (paths.Count == 1)
-                {
-                    //geo = paths[0].RenderedGeometry;
-                    geo = paths[0].Data;
-                    result.Add(geo);
-                    continue;
-                }
-                var geometrys = paths.ToList();
-                var strList = geometrys.Select(p => p.Data.ToString()).ToArray();
+                var paths = canvase.Children.OfType<System.Windows.Shapes.Path>().ToList();                
+                var strList = paths.Select(p => p.Data.ToString());
+                var coll = PathFigureCollection.Parse(string.Join(" ", strList));
 
-                StringBuilder sb = new StringBuilder();
-                foreach (var s in strList)
-                {
-                    sb.Append(s);
-                    sb.Append(" ");
-                }
-
-                var coll = PathFigureCollection.Parse(sb.ToString());
-
-                geo = new PathGeometry() { Figures = coll };
-                
+                var geo = new PathGeometry() { Figures = coll };
                 //geometrys.ForEach(p=>((PathGeometry)geo).AddGeometry(p.RenderedGeometry));
 
                 result.Add(geo);

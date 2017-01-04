@@ -27,26 +27,26 @@
                   Visibility="Hidden" />
         </Canvas>
 
-        <Canvas>
+        <Canvas Visibility="Hidden" >
             <Path x:Name="LeafPathBig"
                   Data="M 180,90 C 300,530 350,560 600,530 C 410,20 210,70 180,90"
                   Fill="GreenYellow"
                   Stretch="None"
                   StrokeThickness="1"
-                  Visibility="Hidden" />
+                  />
         </Canvas>
 
-        <Canvas>
+        <Canvas Visibility="Hidden" >
             <!--  SingleWord  -->
             <Path x:Name="YPath"
                   Data="M 180,90 L 280,250 L 280,500 Q 330,540 380,500 L 380,250 L 460,90 Q 425,60 390,90 L 330,240 L 240,90 Q 210,70 180,90 "
                   Fill="Bisque"
                   Stretch="None"
                   StrokeThickness="60"
-                  Visibility="Hidden" />
+                  />
         </Canvas>
 
-        <Canvas>
+        <Canvas Visibility="Hidden" >
             <!--  Love  -->
             <Path Data="M 290,140 
                   A 70,90 45 1 0 140,320 
@@ -58,13 +58,63 @@
                   A 30,60 75 1 1 340,360
                   C 350,380 380,390 530,320 
                   A 45,60 95 1 0 290,140
-                  "
+                  "                  
                   Fill="OrangeRed"
                   StrokeThickness="3"
                   Stroke="GreenYellow" Canvas.Top="-1"/>
             
         </Canvas>
 
+        <Canvas>
+            <Path Data="M 160,130                  
+                  V 350 
+                  H 300 
+                  V 320
+                  H 190
+                  V 130
+                  L 160,130"
+                  Stroke="Bisque"
+                  StrokeThickness="5"/>
+            <Path Data="M 380,130
+                  A 60,60 45 1,1 380,360
+                  A 60,60 45 1,1 380,130
+                  
+                  M 380,160
+                  A 50,50 45 1,1 380,330
+                  A 50,50 45 1,1 380,160                                    
+                  "
+                  Stroke="Bisque"
+                  StrokeThickness="5"
+                  />
+            <Path Data="M 520,140
+                  L 620,350
+                  L 720,120
+                  H 680
+                  L 620,290
+                  L 540,120
+                  L 520,140
+                  "                  
+                  Stroke="Bisque"
+                  StrokeThickness="5"
+                  />
+            <Path Data="M 720,120
+                  V 360
+                  H 860
+                  V 320
+                  H 750
+                  V 250
+                  H 860
+                  V 220
+                  H 750
+                  V 150
+                  H 860
+                  V 120
+                  L 720,120
+                  "                  
+                  Stroke="Bisque"
+                  StrokeThickness="5"
+                  />
+        </Canvas>
     </Canvas>
 </Page>
 
