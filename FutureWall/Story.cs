@@ -10,12 +10,9 @@ namespace FutureWall
 {
     public class Story : Storyboard
     {
-        public Story(string pathStr, Panel panel)
+        public Story(Geometry pathGeometry, Panel panel)
         {
-            _pathGeometry = new PathGeometry{
-                Figures = PathFigureCollection.Parse(pathStr),
-                //FillRule = FillRule.Nonzero
-            };
+            _pathGeometry = pathGeometry;
 
             //显示轨迹，路径
             //var elm = new System.Windows.Shapes.Path();
@@ -28,11 +25,11 @@ namespace FutureWall
             //_panel.RenderTransformOrigin = new Point(0.5,0.5);
         }
 
-        private readonly PathGeometry _pathGeometry;
+        private readonly Geometry _pathGeometry;
         private Point[] _contourPoints;
         private readonly Panel _panel;
 
-        public void RenderPage(List<ImageCell> imageCells)
+        public void Begin(List<ImageCell> imageCells)
         {
             _contourPoints = GetContourPoints(new Size(_panel.Width, _panel.Height)).ToArray();
             Transform(imageCells);

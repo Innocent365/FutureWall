@@ -66,7 +66,7 @@ namespace FutureWall
             });
 
             var index = 0;
-            var stories = ShapeStr.Select(p => new Story(p, MainPanel)).ToList();
+            var stories = AssistGeometry.GetStoryGeometrys().Select(p => new Story(p, MainPanel)).ToList();
             
             var story = stories[index];
 
@@ -77,19 +77,12 @@ namespace FutureWall
                 if (index >= stories.Count)
                     index = 0;
                 story = stories[index];
-                story.RenderPage(_cellPool);
+                story.Begin(_cellPool);
             };
 
             stories.ForEach(p => p.Completed += onCompleted);
 
-            story.RenderPage(_cellPool);
+            story.Begin(_cellPool);
         }
-
-        public static readonly string[] ShapeStr =
-            {
-                "M 80,80 C 170,320 220,360 380,320 C 310,80 190,60 80,80",
-                "M 180,90 C 300,530 350,560 600,530 C 410,20 210,70 180,90",
-                "M 180,90 L 280,250 L 280,500 Q 330,540 380,500 L 380,250 L 460,90 Q 425,60 390,90 L 330,240 L 240,90 Q 210,70 180,90 ",                
-            };
     }
 }

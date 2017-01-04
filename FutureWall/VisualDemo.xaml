@@ -18,23 +18,53 @@
         <!--                </Setter>-->
         <!--            </Style>-->
         <!--        </Canvas.Resources>-->
-        <Path x:Name="LeafPathSmall"
-              Data="M 80,80 C 170,320 220,360 380,320 C 310,80 190,60 80,80"
-              Fill="Blue"
-              StrokeThickness="1"
-              Visibility="Hidden" />
-        <Path x:Name="LeafPathBig"
-              Data="M 180,90 C 300,530 350,560 600,530 C 410,20 210,70 180,90"
-              Fill="GreenYellow"
-              Stretch="None"
-              StrokeThickness="1"
-              Visibility="Hidden" />
 
-        <Path x:Name="YPath"
-              Data="M 180,90 L 280,250 L 280,500 Q 330,540 380,500 L 380,250 L 460,90 Q 425,60 390,90 L 330,240 L 240,90 Q 210,70 180,90 "
-              Fill="Bisque"
-              Stretch="None"
-              StrokeThickness="60" />
+        <Canvas>
+            <Path x:Name="LeafPathSmall"
+                  Data="M 80,80 C 170,320 220,360 380,320 C 310,80 190,60 80,80"
+                  Fill="Blue"
+                  StrokeThickness="1"
+                  Visibility="Hidden" />
+        </Canvas>
+
+        <Canvas>
+            <Path x:Name="LeafPathBig"
+                  Data="M 180,90 C 300,530 350,560 600,530 C 410,20 210,70 180,90"
+                  Fill="GreenYellow"
+                  Stretch="None"
+                  StrokeThickness="1"
+                  Visibility="Hidden" />
+        </Canvas>
+
+        <Canvas>
+            <!--  SingleWord  -->
+            <Path x:Name="YPath"
+                  Data="M 180,90 L 280,250 L 280,500 Q 330,540 380,500 L 380,250 L 460,90 Q 425,60 390,90 L 330,240 L 240,90 Q 210,70 180,90 "
+                  Fill="Bisque"
+                  Stretch="None"
+                  StrokeThickness="60"
+                  Visibility="Hidden" />
+        </Canvas>
+
+        <Canvas>
+            <!--  Love  -->
+            <Path Data="M 290,140 
+                  A 70,90 45 1 0 140,320 
+                  C 200,340 300,360 300,450
+                  L 320,450
+                  C 320,360 300,320 200,300
+                  A 40,60 45 1 1 290,150 
+                  
+                  A 30,60 75 1 1 340,360
+                  C 350,380 380,390 530,320 
+                  A 45,60 95 1 0 290,140
+                  "
+                  Fill="OrangeRed"
+                  StrokeThickness="3"
+                  Stroke="GreenYellow" Canvas.Top="-1"/>
+            
+        </Canvas>
+
     </Canvas>
 </Page>
 
